@@ -10,7 +10,7 @@ import java.util.Set;
 @Table(name = "users")
 public class User extends BaseEntity{
 
-    @Column(nullable = false)
+    @Column(nullable = false,unique = true)
     private String userName;
     @Column(nullable = false)
     private String password;
