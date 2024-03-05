@@ -1,44 +1,33 @@
-package com.example.myroutdiscover.model.entity;
+package com.example.myroutdiscover.model.service;
 
+import com.example.myroutdiscover.model.entity.Role;
 import com.example.myroutdiscover.model.entity.enums.LevelEnum;
-import jakarta.persistence.*;
 
 import java.util.Set;
 
-@Entity
-@Table(name = "users")
-public class User extends BaseEntity{
-
-    @Column(nullable = false,unique = true)
+public class UserServiceModel {
+    private Long id;
     private String userName;
-    @Column(nullable = false)
+
     private String password;
-    @Column(nullable = false)
+
     private String email;
-    @Column(name = "age")
+
     private Integer age;
-    @ManyToMany(fetch = FetchType.EAGER)
+
     private Set<Role> roles;
-    @Enumerated(EnumType.STRING)
+
     private LevelEnum level;
 
-    public User() {
+    public UserServiceModel() {
     }
 
-    public Integer getAge() {
-        return age;
+    public Long getId() {
+        return id;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUserName() {
@@ -65,7 +54,21 @@ public class User extends BaseEntity{
         this.email = email;
     }
 
+    public Integer getAge() {
+        return age;
+    }
 
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 
     public LevelEnum getLevel() {
         return level;

@@ -1,6 +1,6 @@
 package com.example.myroutdiscover.model.entity;
 
-import com.example.myroutdiscover.model.enums.CategoryNameEnum;
+import com.example.myroutdiscover.model.entity.enums.CategoryNameEnum;
 import jakarta.persistence.*;
 
 @Entity

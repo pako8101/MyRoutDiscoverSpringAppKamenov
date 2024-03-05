@@ -1,6 +1,6 @@
 package com.example.myroutdiscover.model.entity;
 
-import com.example.myroutdiscover.model.enums.RoleNameEnum;
+import com.example.myroutdiscover.model.entity.enums.RoleNameEnum;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;

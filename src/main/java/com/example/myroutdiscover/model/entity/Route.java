@@ -1,7 +1,6 @@
 package com.example.myroutdiscover.model.entity;
 
-import com.example.myroutdiscover.model.enums.CategoryNameEnum;
-import com.example.myroutdiscover.model.enums.LevelEnum;
+import com.example.myroutdiscover.model.entity.enums.LevelEnum;
 import jakarta.persistence.*;
 
 import java.util.Set;
