@@ -8,7 +8,7 @@ import java.util.Set;
 @Entity
 @Table(name = "routes")
 public class Route extends BaseEntity {
-    @Column
+    @Column(columnDefinition = "LONGTEXT")
     private String gpxCoordinates;
     @Enumerated(EnumType.STRING)
     private LevelEnum level;
@@ -20,10 +20,20 @@ public class Route extends BaseEntity {
     private String videoUrl;
     @Column(columnDefinition = "TEXT")
     private String description;
-    @ManyToMany
+    @OneToMany(mappedBy = "route",fetch = FetchType.EAGER)
+    private Set<Picture>pictures;
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<Category> categories;
 
     public Route() {
+    }
+
+    public Set<Picture> getPictures() {
+        return pictures;
+    }
+
+    public void setPictures(Set<Picture> pictures) {
+        this.pictures = pictures;
     }
 
     public Set<Category> getCategories() {

@@ -7,7 +7,8 @@ import java.util.Set;
 
 public class UserServiceModel {
     private Long id;
-    private String userName;
+    private String username;
+    private String fullName;
 
     private String password;
 
@@ -22,6 +23,22 @@ public class UserServiceModel {
     public UserServiceModel() {
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
     public Long getId() {
         return id;
     }
@@ -30,13 +47,7 @@ public class UserServiceModel {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
-    }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 
     public String getPassword() {
         return password;

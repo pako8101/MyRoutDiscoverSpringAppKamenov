@@ -3,7 +3,6 @@ package com.example.myroutdiscover.service.impl;
 import com.example.myroutdiscover.model.entity.User;
 import com.example.myroutdiscover.model.entity.enums.LevelEnum;
 import com.example.myroutdiscover.model.service.UserServiceModel;
-import com.example.myroutdiscover.model.view.UserViewModel;
 import com.example.myroutdiscover.repository.UserRepository;
 import com.example.myroutdiscover.service.UserService;
 import com.example.myroutdiscover.utils.CurrentUser;
@@ -33,7 +32,7 @@ userRepository.saveAndFlush(user);
 
     @Override
     public UserServiceModel findByUsernameAndPassword(String username, String password) {
-        return userRepository.findByUserNameAndPassword(username,password)
+        return userRepository.findByUsernameAndPassword(username,password)
                 .map(user -> modelMapper.map(user, UserServiceModel.class))
                 .orElse(null);
     }
@@ -49,5 +48,11 @@ currentUser.setUsername(username);
         return userRepository.findById(id)
                 .map(user -> modelMapper.map(user, UserServiceModel.class))
                 .orElse(null);
+    }
+
+    @Override
+    public boolean isNameExist(String username) {
+        return userRepository.findByUsername(username)
+                .isPresent();
     }
 }

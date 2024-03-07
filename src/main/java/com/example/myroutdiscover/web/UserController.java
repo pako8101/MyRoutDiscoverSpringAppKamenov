@@ -55,8 +55,15 @@ private final ModelMapper modelMapper;
             redirectAttributes.addFlashAttribute("org.springframework" +
                     ".validation.BindingResult" +
                     ".userRegisterBindingModel", bindingResult);
+
             return "redirect:register";
         }
+
+        boolean isNameExist = userService.isNameExist(userRegisterBindingModel.getUsername());
+        if (isNameExist){
+            
+        }
+
 userService.registerUser(
         modelMapper.map(userRegisterBindingModel, UserServiceModel.class));
 

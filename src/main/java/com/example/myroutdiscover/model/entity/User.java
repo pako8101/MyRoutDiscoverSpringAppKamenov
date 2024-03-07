@@ -7,10 +7,11 @@ import java.util.Set;
 
 @Entity
 @Table(name = "users")
-public class User extends BaseEntity{
-
-    @Column(nullable = false,unique = true)
-    private String userName;
+public class User extends BaseEntity {
+    @Column(nullable = false)
+    private String fullName;
+    @Column(nullable = false, unique = true)
+    private String username;
     @Column(nullable = false)
     private String password;
     @Column(nullable = false)
@@ -23,6 +24,22 @@ public class User extends BaseEntity{
     private LevelEnum level;
 
     public User() {
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public Integer getAge() {
@@ -41,13 +58,6 @@ public class User extends BaseEntity{
         this.roles = roles;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 
     public String getPassword() {
         return password;
@@ -64,7 +74,6 @@ public class User extends BaseEntity{
     public void setEmail(String email) {
         this.email = email;
     }
-
 
 
     public LevelEnum getLevel() {
