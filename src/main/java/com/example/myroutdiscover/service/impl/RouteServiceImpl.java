@@ -28,15 +28,15 @@ private final ModelMapper modelMapper;
                 .stream()
                 .map(route -> {
                     RouteViewModel routeViewModel = modelMapper.map(route, RouteViewModel.class);
-                    if (routeViewModel.getPictureUrl().isEmpty()){
-                        routeViewModel.setPictureUrl("/images/pic4.jpg");
-                    }else {
-                        routeViewModel.setPictureUrl(route.getPictures().stream().findFirst().get().getUrl());
-                    }
-//                    routeViewModel.setPictureUrl(route.getPictures()
-//                            //.stream().findFirst().orElse("/images/pic4.jpg"));
-//                            .isEmpty()
-//                    ? "/images/pic4.jpg" : route.getPictures().stream().findFirst().get().getUrl());
+//                    if (routeViewModel.getPictureUrl().isEmpty()){
+//                        routeViewModel.setPictureUrl("/images/pic4.jpg");
+//                    }else {
+//                        routeViewModel.setPictureUrl(route.getPictures().stream().findFirst().get().getUrl());
+//                    }
+                    routeViewModel.setPictureUrl(route.getPictures()
+//                            .stream().findFirst().orElse("/images/pic4.jpg"));
+                            .isEmpty()
+                    ? "/images/pic4.jpg" : route.getPictures().stream().findFirst().get().getUrl());
 
                     return routeViewModel;
                 }).collect(Collectors.toList());

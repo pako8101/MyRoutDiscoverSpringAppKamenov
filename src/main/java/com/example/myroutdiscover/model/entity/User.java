@@ -8,14 +8,13 @@ import java.util.Set;
 @Entity
 @Table(name = "users")
 public class User extends BaseEntity {
-    @Column(nullable = false)
+    @Column(nullable = false,name = "full_name")
     private String fullName;
     @Column(nullable = false, unique = true)
     private String username;
     @Column(nullable = false)
     private String password;
-    @Column(nullable = false)
-    private String email;
+
     @Column(name = "age")
     private Integer age;
     @ManyToMany(fetch = FetchType.EAGER)
@@ -67,13 +66,7 @@ public class User extends BaseEntity {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
 
     public LevelEnum getLevel() {
