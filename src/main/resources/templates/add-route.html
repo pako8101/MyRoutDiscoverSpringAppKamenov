@@ -3,37 +3,9 @@
 <head th:replace="fragments/commons::head">
 </head>
 <body>
-<!--<div class="wrapper">-->
+<div class="wrapper">
 <!-- Navigation -->
-<header>
-    <nav class="main-nav">
-        <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/">Login</a>
-                </li>
-                <li>
-                    <a href="/">Register</a>
-                </li>
-                <li>
-                    <a href="/">About</a>
-                </li>
-				<li>
-                    <a href="/">Add new route</a>
-                </li>
-                <li>
-                    <a href="/">Profile</a>
-                </li>
-                <li>
-                    <a href="/">Admin</a>
-                </li>
-                <li>
-                    <a href="/">Logout</a>
-                </li>
-        </ul>
-    </nav>
+<header th:replace="fragments/commons::nav">
 </header>
 
 <!-- Top Container -->
@@ -126,5 +98,6 @@
 <footer th:replace="fragments/commons::footer">
 
 </footer>
+</div>
 </body>
 </html>
