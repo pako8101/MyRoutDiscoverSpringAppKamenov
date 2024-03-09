@@ -1,5 +1,6 @@
 package com.example.myroutdiscover.service;
 
+import com.example.myroutdiscover.model.entity.User;
 import com.example.myroutdiscover.model.service.UserServiceModel;
 
 public interface UserService {
@@ -12,4 +13,6 @@ public interface UserService {
     UserServiceModel findById(Long id);
 
     boolean isNameExist(String username);
+
+    User findCurrentUserLoginEntity();
 }

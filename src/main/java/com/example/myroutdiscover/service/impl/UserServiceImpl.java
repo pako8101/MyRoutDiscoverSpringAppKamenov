@@ -55,4 +55,11 @@ currentUser.setUsername(username);
         return userRepository.findByUsername(username)
                 .isPresent();
     }
+
+    @Override
+    public User findCurrentUserLoginEntity() {
+
+        return userRepository.findById(currentUser.getId())
+                .orElse(null);
+    }
 }

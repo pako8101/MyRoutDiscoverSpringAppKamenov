@@ -3,6 +3,7 @@ package com.example.myroutdiscover.model.service;
 import com.example.myroutdiscover.model.entity.Category;
 import com.example.myroutdiscover.model.entity.Picture;
 import com.example.myroutdiscover.model.entity.User;
+import com.example.myroutdiscover.model.entity.enums.CategoryNameEnum;
 import com.example.myroutdiscover.model.entity.enums.LevelEnum;
 import jakarta.persistence.*;
 
@@ -25,7 +26,7 @@ public class RouteServiceModel {
 
     private Set<Picture> pictures;
 
-    private Set<Category> categories;
+    private Set<CategoryNameEnum> categories;
 
     public RouteServiceModel() {
     }
@@ -94,11 +95,11 @@ public class RouteServiceModel {
         this.pictures = pictures;
     }
 
-    public Set<Category> getCategories() {
+    public Set<CategoryNameEnum> getCategories() {
         return categories;
     }
 
-    public void setCategories(Set<Category> categories) {
+    public void setCategories(Set<CategoryNameEnum> categories) {
         this.categories = categories;
     }
 }
