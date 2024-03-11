@@ -2,6 +2,7 @@ package com.example.myroutdiscover.service.impl;
 
 import com.example.myroutdiscover.model.entity.Route;
 import com.example.myroutdiscover.model.service.RouteServiceModel;
+import com.example.myroutdiscover.model.view.RouteDetailsViewModel;
 import com.example.myroutdiscover.model.view.RouteViewModel;
 import com.example.myroutdiscover.repository.RouteRepository;
 import com.example.myroutdiscover.service.CategoryService;
@@ -61,5 +62,13 @@ route.setCategories(routeServiceModel.getCategories()
         .collect(Collectors.toSet()));
 
         routeRepository.save(route);
+    }
+
+    @Override
+    public RouteDetailsViewModel findRouteById(Long id) {
+
+        return routeRepository.findById(id)
+                .map(route -> modelMapper.map(route, RouteDetailsViewModel.class))
+                .orElse(null);
     }
 }
