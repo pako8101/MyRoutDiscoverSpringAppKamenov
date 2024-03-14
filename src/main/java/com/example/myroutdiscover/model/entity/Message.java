@@ -6,15 +6,15 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "messages")
-public class Message extends BaseEntity{
-    @Column(name = "date_time",nullable = false)
+public class Message extends BaseEntity {
+    @Column(name = "date_time", nullable = false)
     private LocalDateTime dateTime;
-@Column(columnDefinition = "TEXT",nullable = false)
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String textContent;
-@ManyToOne
-private User author;
-@ManyToOne
-private User recipient;
+    @ManyToOne
+    private User author;
+    @ManyToOne
+    private User recipient;
 
     public Message() {
     }

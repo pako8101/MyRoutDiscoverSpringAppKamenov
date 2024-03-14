@@ -16,7 +16,8 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final ModelMapper modelMapper;
     private final CurrentUser currentUser;
-@Autowired
+
+    @Autowired
     public UserServiceImpl(UserRepository userRepository, ModelMapper modelMapper, CurrentUser currentUser) {
         this.userRepository = userRepository;
         this.modelMapper = modelMapper;
@@ -25,15 +26,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void registerUser(UserServiceModel userServiceModel) {
-User user = modelMapper.map(userServiceModel, User.class);
-user.setLevel(LevelEnum.BEGINNER);
-userRepository.saveAndFlush(user);
+        User user = modelMapper.map(userServiceModel, User.class);
+        user.setLevel(LevelEnum.BEGINNER);
+        userRepository.saveAndFlush(user);
 
     }
 
     @Override
     public UserServiceModel findByUsernameAndPassword(String username, String password) {
-        return userRepository.findByUsernameAndPassword(username,password)
+        return userRepository.findByUsernameAndPassword(username, password)
                 .map(user -> modelMapper.map(user, UserServiceModel.class))
                 .orElse(null);
     }
